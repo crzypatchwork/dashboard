@@ -8,9 +8,8 @@ export default class Chart extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-
-        }
+        this.state = {}
+        
     }
 
     componentDidMount = async () => {
@@ -47,10 +46,8 @@ export default class Chart extends Component {
             .domain([0, values[0]])
             .range([800, 100]);
 
-
         values.map((e, i) => {
-            svg
-                .append("rect")
+            svg.append("rect")
                 .attr('x', x(arr[i]))
                 .attr('y', 0)
                 .attr("width", 10)
