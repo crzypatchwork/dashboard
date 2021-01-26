@@ -18,16 +18,16 @@ export default class Chart extends Component {
 
     drawBarChart = async (data) => {
 
-        var arr = data.payload.map(e => e.industry)
-        arr = arr.slice(0, 20)
-        console.log(arr)
+        var keys = data.payload.map(e => e.industry)
+        keys = keys.slice(0, 20)
+        console.log(keys)
         var svg = d3.select(this.refs.bar)
             .append('svg')
             .attr('width', 1000)
             .attr('height', 1000)
 
         var x = d3.scalePoint()
-            .domain(arr)
+            .domain(keys)
             .range([100, 800])
 
         svg.append("g")
