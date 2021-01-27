@@ -18,9 +18,9 @@ export default class Chart extends Component {
 
     drawBarChart = async (data) => {
 
-        var keys = data.payload.map(e => e.industry)
-        keys = keys.slice(0, 20)
+        var keys = data.payload.map(e => e.industry).slice(0, 20)
         console.log(keys)
+        
         var svg = d3.select(this.refs.bar)
             .append('svg')
             .attr('width', 1000)
@@ -38,8 +38,7 @@ export default class Chart extends Component {
             .style("text-anchor", "start")
             .style("font-size", 20)
 
-        var values = data.payload.map(e => e.count)
-        values = values.slice(0, 20)
+        var values = data.payload.map(e => e.count).slice(0, 20)
         console.log(values)
 
         var y = d3.scaleLinear()
