@@ -48,7 +48,7 @@ export default class Chart extends Component {
 
         values.map((e, i) => {
             svg.append("rect")
-                .attr('x', x(arr[i]))
+                .attr('x', x(keys[i]))
                 .attr('y', 0)
                 .attr("width", 10)
                 .attr("height", Math.abs(y(0) - y(values[i])))
@@ -64,8 +64,7 @@ export default class Chart extends Component {
 
     render() {
         return (
-            <div ref='bar'>
-            </div>
+            <div ref='bar'></div>
         )
     }
 }
